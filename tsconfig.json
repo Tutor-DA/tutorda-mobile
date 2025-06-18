@@ -1,19 +1,24 @@
 {
-  "extends": "tsconfig.base",
   "compilerOptions": {
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@components/*": ["components/*"],
-      "@constants/*": ["constants/*"]
+      "@/*": [
+        "./*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@constants/*": [
+        "constants/*"
+      ]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-native",
-    "moduleResolution": "bundler",
-    "target": "esnext",
+    "moduleResolution": "node",
+    "target": "ESNext",
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true
