@@ -2,16 +2,34 @@ import React, { useRef, useEffect } from 'react';
 import {
   Animated,
   TouchableWithoutFeedback,
-  View,
   StyleSheet,
 } from 'react-native';
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { theme } from '@/constants/theme';
+// Update the path below to the correct relative path to your theme file
+import { theme } from '@constants/theme';
+import type {
+  BottomTabBarButtonProps,
+  BottomTabBarIconProps,
+} from '@react-navigation/bottom-tabs';
+import type { RouteProp } from '@react-navigation/native';
 
 type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
 
-function BouncyTabBarButton({ children, onPress, accessibilityState }: any) {
+// Icon map moved outside to avoid recreation on every render
+const iconMap: Record<string, { focused: IoniconName; unfocused: IoniconName }> = {
+  learn: { focused: 'book', unfocused: 'book-outline' },
+  practice: { focused: 'pencil', unfocused: 'pencil-outline' },
+  courses: { focused: 'school', unfocused: 'school-outline' },
+  dashboard: { focused: 'grid', unfocused: 'grid-outline' },
+  settings: { focused: 'settings', unfocused: 'settings-outline' },
+};
+
+function BouncyTabBarButton({
+  children,
+  onPress,
+  accessibilityState,
+}: BottomTabBarButtonProps) {
   const scale = useRef(new Animated.Value(1)).current;
   const bgOpacity = useRef(new Animated.Value(0)).current;
 
@@ -52,7 +70,11 @@ function BouncyTabBarButton({ children, onPress, accessibilityState }: any) {
         <Animated.View
           style={[
             styles.bounceBackground,
-            { opacity: bgOpacity, backgroundColor: theme.colors.primary },
+            {
+              opacity: bgOpacity,
+              backgroundColor: theme.colors.primary,
+              borderRadius: 24, // You can replace with theme.radius.lg if you add it
+            },
           ]}
         />
         {children}
@@ -62,23 +84,20 @@ function BouncyTabBarButton({ children, onPress, accessibilityState }: any) {
 }
 
 export default function TabsLayout() {
-  const iconMap: Record<string, { focused: IoniconName; unfocused: IoniconName }> = {
-    learn: { focused: 'book', unfocused: 'book-outline' },
-    practice: { focused: 'pencil', unfocused: 'pencil-outline' },
-    courses: { focused: 'school', unfocused: 'school-outline' },
-    dashboard: { focused: 'grid', unfocused: 'grid-outline' },
-    settings: { focused: 'settings', unfocused: 'settings-outline' },
-  };
-
   return (
     <Tabs
-      screenOptions={({ route }) => {
+      screenOptions={({
+        route,
+      }: {
+        route: RouteProp<Record<string, object | undefined>, string>;
+      }) => {
         const icon = iconMap[route.name] || {
           focused: 'ellipse',
           unfocused: 'ellipse-outline',
         };
+
         return {
-          tabBarIcon: ({ focused, size }) => (
+          tabBarIcon: ({ focused, size }: BottomTabBarIconProps) => (
             <Ionicons
               name={focused ? icon.focused : icon.unfocused}
               size={size}
@@ -87,7 +106,9 @@ export default function TabsLayout() {
           ),
           tabBarActiveTintColor: theme.colors.primary,
           tabBarInactiveTintColor: theme.colors.text.light,
-          tabBarButton: (props) => <BouncyTabBarButton {...props} />,
+          tabBarButton: (props: BottomTabBarButtonProps) => (
+            <BouncyTabBarButton {...props} />
+          ),
         };
       }}
     >
@@ -103,6 +124,5 @@ export default function TabsLayout() {
 const styles = StyleSheet.create({
   bounceBackground: {
     ...StyleSheet.absoluteFillObject,
-    borderRadius: 24,
   },
 });
