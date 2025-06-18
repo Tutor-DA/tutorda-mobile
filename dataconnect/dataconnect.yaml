@@ -1,0 +1,12 @@
+specVersion: 'v1'
+serviceId: 'tutordamobilapp'
+location: 'us-central1'
+schema:
+  source: './schema'
+  datasource:
+    postgresql:
+      database: 'fdcdb'
+      cloudSql:
+        instanceId: 'tutordamobilapp-fdc'
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ['./connector']
