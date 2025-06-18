@@ -50,10 +50,3 @@
 #   reviewText: String
 #   reviewDate: Date! @default(expr: "request.time")
 # }
-type Query {
-  dummy: String
-}
-
-type Mutation {
-  dummyMutation: Boolean
-}
