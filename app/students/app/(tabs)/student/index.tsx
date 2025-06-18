@@ -93,7 +93,7 @@ export default function StudentDashboard() {
             <TouchableOpacity
               key={course.id}
               style={styles.courseCard}
-              onPress={() => router.push(`/student/${course.id}`)}
+              onPress={() => router.push(`./student/${course.id}`)}
               activeOpacity={0.7}
             >
               <Image source={{ uri: course.thumbnail }} style={styles.courseThumbnail} />

@@ -13,7 +13,7 @@ export default function RootLayout() {
       if (user) {
         router.replace('/home');
       } else {
-        router.replace('/auth/login');  // ✅ updated for safer routing
+        router.replace('./auth/login');  // ✅ updated for safer routing
       }
       setLoading(false);
     });

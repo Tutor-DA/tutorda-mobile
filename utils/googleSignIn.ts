@@ -7,7 +7,7 @@ import { auth } from '@/firebaseConfig';
 WebBrowser.maybeCompleteAuthSession();
 export function useGoogleSignIn() {
   const [request, response, promptAsync] = Google.useAuthRequest({
-    expoClientId:
+    clientId:
       '11850336257-4ni461lhma9p23am7gukpcv11d64a57n.apps.googleusercontent.com',
     iosClientId:
       '11850336257-j7fn8mvojrinq7uq202ojdn0d04siu4n.apps.googleusercontent.com',

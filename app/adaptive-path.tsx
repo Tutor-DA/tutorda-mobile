@@ -143,20 +143,20 @@ export default function AdaptivePathScreen() {
     },
   ];
 
-  const getNodeColor = (status: string) => {
-    switch (status) {
-      case 'completed':
-        return ['#10B981', '#059669'];
-      case 'current':
-        return ['#6366F1', '#4F46E5'];
-      case 'available':
-        return ['#F59E0B', '#D97706'];
-      case 'locked':
-        return ['#9CA3AF', '#6B7280'];
-      default:
-        return ['#9CA3AF', '#6B7280'];
-    }
-  };
+function getNodeColor(status: LearningNode["status"]): [string, string] {
+  switch (status) {
+    case 'completed':
+      return ['#10B981', '#34D399']; // green gradient
+    case 'current':
+      return ['#6366F1', '#8B5CF6']; // blue gradient
+    case 'available':
+      return ['#F59E0B', '#FBBF24']; // yellow gradient
+    case 'locked':
+      return ['#9CA3AF', '#D1D5DB']; // gray gradient
+    default:
+      return ['#E5E7EB', '#F3F4F6']; // fallback
+  }
+}
 
   const getStatusIcon = (status: string) => {
     switch (status) {
@@ -187,7 +187,7 @@ export default function AdaptivePathScreen() {
   };
 
   const renderConnectionLines = () => {
-    const lines = [];
+    const lines: React.ReactNode[] = [];
     learningNodes.forEach((node) => {
       node.prerequisites.forEach((prereqId) => {
         const prereq = learningNodes.find((n) => n.id === prereqId);
@@ -223,6 +223,8 @@ export default function AdaptivePathScreen() {
     return lines;
   };
 
+
+  
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}

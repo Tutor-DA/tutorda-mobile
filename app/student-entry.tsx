@@ -64,7 +64,7 @@ export default function StudentEntryScreen() {
 
         <TouchableOpacity
           style={styles.startButton}
-          onPress={() => router.replace('/student-dashboard')}
+          onPress={() => router.replace('./student-dashboard')}
         >
           <Award size={20} color={theme.colors.text.inverse} />
           <Text style={styles.startButtonText}>Go to Dashboard</Text>
