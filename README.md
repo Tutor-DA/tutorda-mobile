@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TutorDA.org - Math Learning App
 
 A comprehensive React Native application built with Expo for interactive math learning and practice.
@@ -365,3 +366,6 @@ For support and questions:
 ---
 
 **Built with ❤️ by the TutorDA.org team**
+=======
+# tutorda-mobile
+>>>>>>> 9a35400e18c102612219b739405a63b6192d4d6e
