@@ -1581,3 +1581,46 @@ I0618 23:53:43.476433    2636 load.go:115] Finished reloading
  {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0618 23:53:43.489682    2636 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
 [info] [Firebase Plugin] Stopping Data Connect toolkit
 [warn] !  Data Connect Emulator has exited upon receiving signal: SIGKILL 
+[debug] [2025-06-18T19:57:58.768Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-06-18T19:58:04.312Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-06-18T19:58:04.313Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-18T19:58:04.313Z] > authorizing via signed-in user (support@tutorda.org)
+[debug] [2025-06-18T19:58:04.315Z] Checked if tokens are valid: true, expires at: 1750277831002
+[debug] [2025-06-18T19:58:04.316Z] Checked if tokens are valid: true, expires at: 1750277831002
+[debug] [2025-06-18T19:58:04.316Z] [Firebase Plugin] User found:  support@tutorda.org
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-06-18T19:58:04.316Z] Checked if tokens are valid: true, expires at: 1750277831002
+[debug] [2025-06-18T19:58:04.317Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-06-18T19:58:04.324Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[debug] [2025-06-18T19:58:05.267Z] Object "/emulators/storage" in "firebase.json" has unknown property: {"additionalProperty":"rules"}
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.6.3) on port 50001
+[debug] [2025-06-18T19:58:05.345Z] I0618 23:58:05.330953   13144 control.go:73] [/emulator/tutordamobilapp 5123] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0618 23:58:05.330953   13144 control.go:73] [/emulator/tutordamobilapp 5123] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1233B] connector\\queries.gql [1802B] \n"}}
+[debug] [2025-06-18T19:58:05.345Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-06-18T19:58:05.346Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-06-18T19:58:05.346Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\gsuge\\.cache\\firebase\\emulators\\dataconnect-emulator-2.6.3.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\gsuge\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.6.3.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-06-18T19:58:05.405Z] I0618 23:58:05.394996   24972 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0618 23:58:05.394996   24972 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-06-18T19:58:05.429Z] I0618 23:58:05.418164   24972 control.go:73] [/emulator/tutordamobilapp a547] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0618 23:58:05.418164   24972 control.go:73] [/emulator/tutordamobilapp a547] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1233B] connector\\queries.gql [1802B] \n"}}
+[debug] [2025-06-18T19:58:05.448Z] I0618 23:58:05.435806   24972 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+I0618 23:58:05.442116   24972 collector.go:107] schema extensions wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [71531B] 
+I0618 23:58:05.444442   24972 collector.go:107] connector "default" javascriptSdk wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+Generated sources: react\index.cjs.js [0B] react\esm\index.esm.js [0B] index.cjs.js [153B] react\esm\package.json [17B] esm\package.json [17B] package.json [860B] README.md [2774B] react\index.d.ts [228B] react\package.json [468B] react\README.md [5357B] index.d.ts [246B] esm\index.esm.js [118B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0618 23:58:05.435806   24972 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nI0618 23:58:05.442116   24972 collector.go:107] schema extensions wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [71531B] \nI0618 23:58:05.444442   24972 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: react\\index.cjs.js [0B] react\\esm\\index.esm.js [0B] index.cjs.js [153B] react\\esm\\package.json [17B] esm\\package.json [17B] package.json [860B] README.md [2774B] react\\index.d.ts [228B] react\\package.json [468B] react\\README.md [5357B] index.d.ts [246B] esm\\index.esm.js [118B] \n"}}
+[debug] [2025-06-18T19:58:05.449Z] I0618 23:58:05.449148   24972 installsdk.go:80] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0618 23:58:05.449148   24972 installsdk.go:80] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-06-18T19:58:05.946Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-06-18T19:58:05.947Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-06-18T19:58:19.404Z] E0618 23:58:19.403630   24972 installsdk.go:82] Failed to install package: exit status 0xc000013a
+I0618 23:58:19.404362   24972 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0618 23:58:19.403630   24972 installsdk.go:82] Failed to install package: exit status 0xc000013a\nI0618 23:58:19.404362   24972 load.go:115] Finished reloading\n"}}
+[debug] [2025-06-18T19:58:19.414Z] I0618 23:58:19.414698   24972 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0618 23:58:19.414698   24972 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
