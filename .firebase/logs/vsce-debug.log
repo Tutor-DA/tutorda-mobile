@@ -1831,3 +1831,324 @@ For CI servers and headless environments, generate a new token with firebase log
  {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 09:33:28.943602    5520 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
 [debug] [2025-06-19T05:33:29.126Z] I0619 09:33:29.124631    5520 engine.go:170] [/emulator/tutordamobilapp cd4c] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
  {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 09:33:29.124631    5520 engine.go:170] [/emulator/tutordamobilapp cd4c] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[info] [Firebase Plugin] Stopping Data Connect toolkit
+[warn] !  Data Connect Emulator has exited upon receiving signal: SIGKILL 
+[debug] [2025-06-19T11:35:14.529Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-06-19T11:35:21.488Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-06-19T11:35:21.495Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-19T11:35:21.499Z] > authorizing via signed-in user (support@tutorda.org)
+[debug] [2025-06-19T11:35:21.510Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T11:35:21.512Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T11:35:21.514Z] > refreshing access token with scopes: []
+[debug] [2025-06-19T11:35:21.519Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-19T11:35:21.520Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-19T11:35:21.555Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[debug] [2025-06-19T11:35:29.078Z] Object "/emulators/storage" in "firebase.json" has unknown property: {"additionalProperty":"rules"}
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.6.3) on port 50001
+[debug] [2025-06-19T11:35:34.868Z] I0619 15:35:34.777646    2340 control.go:73] [/emulator/tutordamobilapp f844] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 15:35:34.777646    2340 control.go:73] [/emulator/tutordamobilapp f844] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1233B] connector\\queries.gql [1802B] \n"}}
+[debug] [2025-06-19T11:35:35.212Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-06-19T11:35:35.212Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-06-19T11:35:35.213Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\gsuge\\.cache\\firebase\\emulators\\dataconnect-emulator-2.6.3.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\gsuge\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.6.3.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-06-19T11:35:35.313Z] I0619 15:35:35.243345    3344 load.go:37] Reloading schema and connectors...
+I0619 15:35:35.257652    3344 control.go:73] [/emulator/tutordamobilapp d935] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+I0619 15:35:35.272199    3344 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+I0619 15:35:35.277208    3344 collector.go:107] schema extensions wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [71531B] 
+I0619 15:35:35.283107    3344 collector.go:107] connector "default" javascriptSdk wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+Generated sources: index.cjs.js [153B] package.json [860B] react\esm\package.json [17B] react\esm\index.esm.js [0B] react\index.cjs.js [0B] react\README.md [5357B] index.d.ts [246B] esm\index.esm.js [118B] esm\package.json [17B] README.md [2774B] react\index.d.ts [228B] react\package.json [468B] 
+I0619 15:35:35.293126    3344 installsdk.go:80] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 15:35:35.243345    3344 load.go:37] Reloading schema and connectors...\nI0619 15:35:35.257652    3344 control.go:73] [/emulator/tutordamobilapp d935] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1233B] connector\\queries.gql [1802B] \nI0619 15:35:35.272199    3344 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nI0619 15:35:35.277208    3344 collector.go:107] schema extensions wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [71531B] \nI0619 15:35:35.283107    3344 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: index.cjs.js [153B] package.json [860B] react\\esm\\package.json [17B] react\\esm\\index.esm.js [0B] react\\index.cjs.js [0B] react\\README.md [5357B] index.d.ts [246B] esm\\index.esm.js [118B] esm\\package.json [17B] README.md [2774B] react\\index.d.ts [228B] react\\package.json [468B] \nI0619 15:35:35.293126    3344 installsdk.go:80] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-06-19T11:35:36.097Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2025-06-19T11:35:36.097Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] [Firebase Plugin] requireAuth error: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2025-06-19T11:35:42.945Z] I0619 15:35:42.945522    3344 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 15:35:42.945522    3344 load.go:115] Finished reloading\n"}}
+[debug] [2025-06-19T11:35:42.953Z] I0619 15:35:42.954165    3344 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 15:35:42.954165    3344 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[debug] [2025-06-19T11:35:43.003Z] I0619 15:35:43.000171    3344 engine.go:170] [/emulator/tutordamobilapp d935] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 15:35:43.000171    3344 engine.go:170] [/emulator/tutordamobilapp d935] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[info] [Firebase Plugin] Stopping Data Connect toolkit
+[warn] !  Data Connect Emulator has exited upon receiving signal: SIGKILL 
+[debug] [2025-06-19T15:42:53.029Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-06-19T15:43:00.921Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-06-19T15:43:00.922Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-19T15:43:00.923Z] > authorizing via signed-in user (support@tutorda.org)
+[debug] [2025-06-19T15:43:00.925Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T15:43:00.925Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T15:43:00.925Z] > refreshing access token with scopes: []
+[debug] [2025-06-19T15:43:00.927Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-19T15:43:00.927Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-19T15:43:00.935Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[debug] [2025-06-19T15:43:03.003Z] Object "/emulators/storage" in "firebase.json" has unknown property: {"additionalProperty":"rules"}
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.6.3) on port 50001
+[debug] [2025-06-19T15:43:09.173Z] I0619 19:43:09.160554    9136 control.go:73] [/emulator/tutordamobilapp 5302] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\queries.gql [1802B] connector\mutations.gql [1233B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:43:09.160554    9136 control.go:73] [/emulator/tutordamobilapp 5302] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\queries.gql [1802B] connector\\mutations.gql [1233B] \n"}}
+[debug] [2025-06-19T15:43:09.174Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-06-19T15:43:09.175Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-06-19T15:43:09.175Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\gsuge\\.cache\\firebase\\emulators\\dataconnect-emulator-2.6.3.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\gsuge\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.6.3.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-06-19T15:43:09.242Z] I0619 19:43:09.215172    1360 load.go:37] Reloading schema and connectors...
+I0619 19:43:09.236437    1360 control.go:73] [/emulator/tutordamobilapp b6e7] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\queries.gql [1802B] connector\mutations.gql [1233B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:43:09.215172    1360 load.go:37] Reloading schema and connectors...\nI0619 19:43:09.236437    1360 control.go:73] [/emulator/tutordamobilapp b6e7] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\queries.gql [1802B] connector\\mutations.gql [1233B] \n"}}
+[debug] [2025-06-19T15:43:09.442Z] I0619 19:43:09.252608    1360 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+I0619 19:43:09.261161    1360 collector.go:107] schema extensions wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [71531B] 
+I0619 19:43:09.264543    1360 collector.go:107] connector "default" javascriptSdk wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+Generated sources: esm\package.json [17B] package.json [860B] react\esm\package.json [17B] index.d.ts [246B] esm\index.esm.js [118B] index.cjs.js [153B] README.md [2774B] react\index.d.ts [228B] react\package.json [468B] react\index.cjs.js [0B] react\esm\index.esm.js [0B] react\README.md [5357B] 
+I0619 19:43:09.272945    1360 installsdk.go:80] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:43:09.252608    1360 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nI0619 19:43:09.261161    1360 collector.go:107] schema extensions wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [71531B] \nI0619 19:43:09.264543    1360 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: esm\\package.json [17B] package.json [860B] react\\esm\\package.json [17B] index.d.ts [246B] esm\\index.esm.js [118B] index.cjs.js [153B] README.md [2774B] react\\index.d.ts [228B] react\\package.json [468B] react\\index.cjs.js [0B] react\\esm\\index.esm.js [0B] react\\README.md [5357B] \nI0619 19:43:09.272945    1360 installsdk.go:80] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-06-19T15:43:09.958Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2025-06-19T15:43:09.959Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] [Firebase Plugin] requireAuth error: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2025-06-19T15:43:17.063Z] I0619 19:43:17.063814    1360 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:43:17.063814    1360 load.go:115] Finished reloading\n"}}
+[debug] [2025-06-19T15:43:17.077Z] I0619 19:43:17.077491    1360 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:43:17.077491    1360 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[debug] [2025-06-19T15:43:17.258Z] I0619 19:43:17.258197    1360 engine.go:170] [/emulator/tutordamobilapp b6e7] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:43:17.258197    1360 engine.go:170] [/emulator/tutordamobilapp b6e7] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[info] [Firebase Plugin] Stopping Data Connect toolkit
+[warn] !  Data Connect Emulator has exited upon receiving signal: SIGKILL 
+[debug] [2025-06-19T15:53:09.233Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-06-19T15:53:14.783Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-06-19T15:53:14.784Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-19T15:53:14.785Z] > authorizing via signed-in user (support@tutorda.org)
+[debug] [2025-06-19T15:53:14.788Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T15:53:14.789Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T15:53:14.789Z] > refreshing access token with scopes: []
+[debug] [2025-06-19T15:53:14.791Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-19T15:53:14.791Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-19T15:53:14.803Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[debug] [2025-06-19T15:53:16.985Z] Object "/emulators/storage" in "firebase.json" has unknown property: {"additionalProperty":"rules"}
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.6.3) on port 50001
+[debug] [2025-06-19T15:53:17.158Z] I0619 19:53:17.138481   13728 control.go:73] [/emulator/tutordamobilapp e389] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:53:17.138481   13728 control.go:73] [/emulator/tutordamobilapp e389] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1233B] connector\\queries.gql [1802B] \n"}}
+[debug] [2025-06-19T15:53:17.159Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-06-19T15:53:17.159Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-06-19T15:53:17.159Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\gsuge\\.cache\\firebase\\emulators\\dataconnect-emulator-2.6.3.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\gsuge\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.6.3.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-06-19T15:53:20.088Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2025-06-19T15:53:20.089Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] [Firebase Plugin] requireAuth error: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2025-06-19T15:53:22.500Z] I0619 19:53:22.484186   12848 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:53:22.484186   12848 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-06-19T15:53:22.540Z] I0619 19:53:22.514082   12848 control.go:73] [/emulator/tutordamobilapp 024d] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:53:22.514082   12848 control.go:73] [/emulator/tutordamobilapp 024d] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1233B] connector\\queries.gql [1802B] \n"}}
+[debug] [2025-06-19T15:53:22.567Z] I0619 19:53:22.545158   12848 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:53:22.545158   12848 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-06-19T15:53:22.717Z] I0619 19:53:22.571253   12848 collector.go:107] schema extensions wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [71531B] 
+I0619 19:53:22.577787   12848 collector.go:107] connector "default" javascriptSdk wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+Generated sources: esm\package.json [17B] package.json [860B] react\index.d.ts [228B] react\esm\package.json [17B] react\index.cjs.js [0B] react\esm\index.esm.js [0B] index.d.ts [246B] esm\index.esm.js [118B] index.cjs.js [153B] README.md [2774B] react\package.json [468B] react\README.md [5357B] 
+I0619 19:53:22.594516   12848 installsdk.go:80] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:53:22.571253   12848 collector.go:107] schema extensions wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [71531B] \nI0619 19:53:22.577787   12848 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: esm\\package.json [17B] package.json [860B] react\\index.d.ts [228B] react\\esm\\package.json [17B] react\\index.cjs.js [0B] react\\esm\\index.esm.js [0B] index.d.ts [246B] esm\\index.esm.js [118B] index.cjs.js [153B] README.md [2774B] react\\package.json [468B] react\\README.md [5357B] \nI0619 19:53:22.594516   12848 installsdk.go:80] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-06-19T15:53:32.024Z] I0619 19:53:32.024073   12848 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:53:32.024073   12848 load.go:115] Finished reloading\n"}}
+[debug] [2025-06-19T15:53:32.167Z] I0619 19:53:32.163729   12848 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 19:53:32.163729   12848 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[info] [Firebase Plugin] Stopping Data Connect toolkit
+[warn] !  Data Connect Emulator has exited upon receiving signal: SIGKILL 
+[debug] [2025-06-19T17:02:16.346Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-06-19T17:02:23.963Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-06-19T17:02:23.965Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-19T17:02:23.965Z] > authorizing via signed-in user (support@tutorda.org)
+[debug] [2025-06-19T17:02:23.968Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T17:02:23.968Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T17:02:23.968Z] > refreshing access token with scopes: []
+[debug] [2025-06-19T17:02:23.971Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-19T17:02:23.971Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-19T17:02:23.979Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[debug] [2025-06-19T17:02:26.448Z] Object "/emulators/storage" in "firebase.json" has unknown property: {"additionalProperty":"rules"}
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.6.3) on port 50001
+[debug] [2025-06-19T17:02:26.589Z] I0619 21:02:26.573470   25084 control.go:73] [/emulator/tutordamobilapp 78c4] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\queries.gql [1802B] connector\mutations.gql [1233B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:02:26.573470   25084 control.go:73] [/emulator/tutordamobilapp 78c4] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\queries.gql [1802B] connector\\mutations.gql [1233B] \n"}}
+[debug] [2025-06-19T17:02:26.589Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-06-19T17:02:26.590Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-06-19T17:02:26.590Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\gsuge\\.cache\\firebase\\emulators\\dataconnect-emulator-2.6.3.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\gsuge\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.6.3.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-06-19T17:02:26.675Z] I0619 21:02:26.636975   24000 load.go:37] Reloading schema and connectors...
+I0619 21:02:26.660335   24000 control.go:73] [/emulator/tutordamobilapp 33c3] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:02:26.636975   24000 load.go:37] Reloading schema and connectors...\nI0619 21:02:26.660335   24000 control.go:73] [/emulator/tutordamobilapp 33c3] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1233B] connector\\queries.gql [1802B] \n"}}
+[debug] [2025-06-19T17:02:26.872Z] I0619 21:02:26.689437   24000 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+I0619 21:02:26.706586   24000 collector.go:107] schema extensions wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [71531B] 
+I0619 21:02:26.709615   24000 collector.go:107] connector "default" javascriptSdk wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+Generated sources: index.cjs.js [153B] package.json [860B] README.md [2774B] react\index.d.ts [228B] react\esm\package.json [17B] react\index.cjs.js [0B] react\esm\index.esm.js [0B] index.d.ts [246B] esm\index.esm.js [118B] esm\package.json [17B] react\package.json [468B] react\README.md [5357B] 
+I0619 21:02:26.718633   24000 installsdk.go:80] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:02:26.689437   24000 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nI0619 21:02:26.706586   24000 collector.go:107] schema extensions wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [71531B] \nI0619 21:02:26.709615   24000 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: index.cjs.js [153B] package.json [860B] README.md [2774B] react\\index.d.ts [228B] react\\esm\\package.json [17B] react\\index.cjs.js [0B] react\\esm\\index.esm.js [0B] index.d.ts [246B] esm\\index.esm.js [118B] esm\\package.json [17B] react\\package.json [468B] react\\README.md [5357B] \nI0619 21:02:26.718633   24000 installsdk.go:80] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-06-19T17:02:27.470Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2025-06-19T17:02:27.471Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] [Firebase Plugin] requireAuth error: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2025-06-19T17:02:35.376Z] I0619 21:02:35.376807   24000 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:02:35.376807   24000 load.go:115] Finished reloading\n"}}
+[debug] [2025-06-19T17:02:35.394Z] I0619 21:02:35.394215   24000 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:02:35.394215   24000 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[debug] [2025-06-19T17:02:35.671Z] I0619 21:02:35.671903   24000 engine.go:170] [/emulator/tutordamobilapp 33c3] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:02:35.671903   24000 engine.go:170] [/emulator/tutordamobilapp 33c3] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[info] [Firebase Plugin] Stopping Data Connect toolkit
+[warn] !  Data Connect Emulator has exited upon receiving signal: SIGKILL 
+[debug] [2025-06-19T17:04:33.926Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-06-19T17:04:37.692Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-06-19T17:04:37.694Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-19T17:04:37.695Z] > authorizing via signed-in user (support@tutorda.org)
+[debug] [2025-06-19T17:04:37.702Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T17:04:37.703Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T17:04:37.703Z] > refreshing access token with scopes: []
+[debug] [2025-06-19T17:04:37.704Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-19T17:04:37.705Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-19T17:04:37.715Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[debug] [2025-06-19T17:04:41.016Z] Object "/emulators/storage" in "firebase.json" has unknown property: {"additionalProperty":"rules"}
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.6.3) on port 50001
+[debug] [2025-06-19T17:04:41.152Z] I0619 21:04:41.136602   12020 control.go:73] [/emulator/tutordamobilapp 39e0] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:04:41.136602   12020 control.go:73] [/emulator/tutordamobilapp 39e0] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1233B] connector\\queries.gql [1802B] \n"}}
+[debug] [2025-06-19T17:04:41.153Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-06-19T17:04:41.154Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-06-19T17:04:41.154Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\gsuge\\.cache\\firebase\\emulators\\dataconnect-emulator-2.6.3.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\gsuge\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.6.3.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-06-19T17:04:41.240Z] I0619 21:04:41.209003   22968 load.go:37] Reloading schema and connectors...
+I0619 21:04:41.234078   22968 control.go:73] [/emulator/tutordamobilapp 42c6] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:04:41.209003   22968 load.go:37] Reloading schema and connectors...\nI0619 21:04:41.234078   22968 control.go:73] [/emulator/tutordamobilapp 42c6] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1233B] connector\\queries.gql [1802B] \n"}}
+[debug] [2025-06-19T17:04:41.365Z] I0619 21:04:41.258074   22968 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+I0619 21:04:41.269115   22968 collector.go:107] schema extensions wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [71531B] 
+I0619 21:04:41.273639   22968 collector.go:107] connector "default" javascriptSdk wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+Generated sources: react\README.md [5357B] esm\index.esm.js [118B] esm\package.json [17B] index.cjs.js [153B] README.md [2774B] react\index.d.ts [228B] react\esm\index.esm.js [0B] index.d.ts [246B] package.json [860B] react\package.json [468B] react\esm\package.json [17B] react\index.cjs.js [0B] 
+I0619 21:04:41.288172   22968 installsdk.go:80] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:04:41.258074   22968 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nI0619 21:04:41.269115   22968 collector.go:107] schema extensions wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [71531B] \nI0619 21:04:41.273639   22968 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: react\\README.md [5357B] esm\\index.esm.js [118B] esm\\package.json [17B] index.cjs.js [153B] README.md [2774B] react\\index.d.ts [228B] react\\esm\\index.esm.js [0B] index.d.ts [246B] package.json [860B] react\\package.json [468B] react\\esm\\package.json [17B] react\\index.cjs.js [0B] \nI0619 21:04:41.288172   22968 installsdk.go:80] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-06-19T17:04:41.773Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2025-06-19T17:04:41.774Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] [Firebase Plugin] requireAuth error: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2025-06-19T17:04:45.816Z] I0619 21:04:45.817278   22968 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:04:45.817278   22968 load.go:115] Finished reloading\n"}}
+[debug] [2025-06-19T17:04:45.828Z] I0619 21:04:45.828583   22968 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:04:45.828583   22968 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[debug] [2025-06-19T17:04:45.948Z] I0619 21:04:45.948170   22968 engine.go:170] [/emulator/tutordamobilapp 42c6] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0619 21:04:45.948170   22968 engine.go:170] [/emulator/tutordamobilapp 42c6] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[debug] [2025-06-19T20:05:22.009Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-06-19T20:05:27.260Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-06-19T20:05:27.262Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-19T20:05:27.262Z] > authorizing via signed-in user (support@tutorda.org)
+[debug] [2025-06-19T20:05:27.264Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T20:05:27.265Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T20:05:27.265Z] > refreshing access token with scopes: []
+[debug] [2025-06-19T20:05:27.266Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-19T20:05:27.267Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-19T20:05:27.275Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[debug] [2025-06-19T20:05:29.231Z] Object "/emulators/storage" in "firebase.json" has unknown property: {"additionalProperty":"rules"}
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.6.3) on port 50002
+[debug] [2025-06-19T20:05:29.329Z] I0620 00:05:29.317213   27560 control.go:73] [/emulator/tutordamobilapp 9b45] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0620 00:05:29.317213   27560 control.go:73] [/emulator/tutordamobilapp 9b45] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1233B] connector\\queries.gql [1802B] \n"}}
+[debug] [2025-06-19T20:05:29.329Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-06-19T20:05:29.329Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-06-19T20:05:29.330Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\gsuge\\.cache\\firebase\\emulators\\dataconnect-emulator-2.6.3.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50002","--config_dir=c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\gsuge\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.6.3.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50002\",\"--config_dir=c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-06-19T20:05:29.396Z] I0620 00:05:29.369855    4432 load.go:37] Reloading schema and connectors...
+I0620 00:05:29.386566    4432 control.go:73] [/emulator/tutordamobilapp a114] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1233B] connector\queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0620 00:05:29.369855    4432 load.go:37] Reloading schema and connectors...\nI0620 00:05:29.386566    4432 control.go:73] [/emulator/tutordamobilapp a114] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1233B] connector\\queries.gql [1802B] \n"}}
+[debug] [2025-06-19T20:05:29.509Z] I0620 00:05:29.407057    4432 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+I0620 00:05:29.422163    4432 collector.go:107] schema extensions wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [71531B] 
+I0620 00:05:29.426790    4432 collector.go:107] connector "default" javascriptSdk wrote into "c:\\Users\\gsuge\\Downloads\\TutorDAMobilApp\\dataconnect-generated\\js\\default-connector"
+Generated sources: index.d.ts [246B] esm\package.json [17B] index.cjs.js [153B] package.json [860B] react\esm\package.json [17B] react\index.cjs.js [0B] react\esm\index.esm.js [0B] esm\index.esm.js [118B] README.md [2774B] react\index.d.ts [228B] react\package.json [468B] react\README.md [5357B] 
+I0620 00:05:29.434801    4432 installsdk.go:80] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0620 00:05:29.407057    4432 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nI0620 00:05:29.422163    4432 collector.go:107] schema extensions wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [71531B] \nI0620 00:05:29.426790    4432 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\Users\\\\gsuge\\\\Downloads\\\\TutorDAMobilApp\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: index.d.ts [246B] esm\\package.json [17B] index.cjs.js [153B] package.json [860B] react\\esm\\package.json [17B] react\\index.cjs.js [0B] react\\esm\\index.esm.js [0B] esm\\index.esm.js [118B] README.md [2774B] react\\index.d.ts [228B] react\\package.json [468B] react\\README.md [5357B] \nI0620 00:05:29.434801    4432 installsdk.go:80] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-06-19T20:05:29.984Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2025-06-19T20:05:29.984Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] [Firebase Plugin] requireAuth error: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2025-06-19T20:05:37.383Z] I0620 00:05:37.383257    4432 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0620 00:05:37.383257    4432 load.go:115] Finished reloading\n"}}
+[debug] [2025-06-19T20:05:37.398Z] I0620 00:05:37.398888    4432 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50002
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0620 00:05:37.398888    4432 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50002\n"}}
+[debug] [2025-06-19T20:05:37.522Z] I0620 00:05:37.522197    4432 engine.go:170] [/emulator/tutordamobilapp a114] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0620 00:05:37.522197    4432 engine.go:170] [/emulator/tutordamobilapp a114] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[info] [Firebase Plugin] Stopping Data Connect toolkit
+[warn] !  Data Connect Emulator has exited upon receiving signal: SIGKILL 
+[debug] [2025-06-19T20:05:43.018Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-06-19T20:05:45.465Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-06-19T20:05:45.466Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-19T20:05:45.467Z] > authorizing via signed-in user (support@tutorda.org)
+[debug] [2025-06-19T20:05:45.470Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T20:05:45.470Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-06-19T20:05:45.470Z] > refreshing access token with scopes: []
+[debug] [2025-06-19T20:05:45.471Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-19T20:05:45.472Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
