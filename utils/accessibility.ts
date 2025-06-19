@@ -4,7 +4,7 @@
  */
 
 import { Platform } from 'react-native';
-import { theme } from '@/theme';
+import { theme } from '@/constants/theme';
 
 /**
  * Check if a color combination meets WCAG contrast requirements

@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   progressBar: {
-    backgroundColor: theme.colors.borderLight,
+    backgroundColor: theme.colors.secondary,
     borderRadius: theme.borderRadius.full,
     overflow: 'hidden',
   },

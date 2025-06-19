@@ -6,17 +6,19 @@ import {
 } from 'react-native';
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-// Update the path below to the correct relative path to your theme file
-import { theme } from '@constants/theme';
-import type {
-  BottomTabBarButtonProps,
-  BottomTabBarIconProps,
-} from '@react-navigation/bottom-tabs';
+import type { BottomTabBarButtonProps } from '@react-navigation/bottom-tabs';
 import type { RouteProp } from '@react-navigation/native';
 
 type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
+type TabBarIconProps = {
+  focused: boolean;
+  color: string;
+  size: number;
+};
 
-// Icon map moved outside to avoid recreation on every render
+const PRIMARY_COLOR = '#6366F1';       // Previously theme.colors.primary
+const INACTIVE_TEXT_COLOR = '#94A3B8'; // Previously theme.colors.text.light
+
 const iconMap: Record<string, { focused: IoniconName; unfocused: IoniconName }> = {
   learn: { focused: 'book', unfocused: 'book-outline' },
   practice: { focused: 'pencil', unfocused: 'pencil-outline' },
@@ -72,8 +74,8 @@ function BouncyTabBarButton({
             styles.bounceBackground,
             {
               opacity: bgOpacity,
-              backgroundColor: theme.colors.primary,
-              borderRadius: 24, // You can replace with theme.radius.lg if you add it
+              backgroundColor: PRIMARY_COLOR,
+              borderRadius: 24,
             },
           ]}
         />
@@ -97,15 +99,15 @@ export default function TabsLayout() {
         };
 
         return {
-          tabBarIcon: ({ focused, size }: BottomTabBarIconProps) => (
-            <Ionicons
-              name={focused ? icon.focused : icon.unfocused}
-              size={size}
-              color={focused ? theme.colors.primary : theme.colors.text.light}
-            />
-          ),
-          tabBarActiveTintColor: theme.colors.primary,
-          tabBarInactiveTintColor: theme.colors.text.light,
+        tabBarIcon: ({ focused, size, color }: TabBarIconProps) => (
+  <Ionicons
+    name={focused ? icon.focused : icon.unfocused}
+    size={size}
+    color={color}
+  />
+),
+          tabBarActiveTintColor: PRIMARY_COLOR,
+          tabBarInactiveTintColor: INACTIVE_TEXT_COLOR,
           tabBarButton: (props: BottomTabBarButtonProps) => (
             <BouncyTabBarButton {...props} />
           ),

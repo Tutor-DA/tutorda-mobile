@@ -12,7 +12,7 @@ import Animated, {
   withSequence,
   withTiming,
 } from 'react-native-reanimated';
-import { theme } from '@/theme';
+import { theme } from '@/constants/theme';
 
 interface TabBarBadgeProps {
   /** Badge count to display */
