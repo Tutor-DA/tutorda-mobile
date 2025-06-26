@@ -3561,3 +3561,7 @@ For CI servers and headless environments, generate a new token with firebase log
 [error] [Firebase Plugin] requireAuth error: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
 
 For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2025-06-26T01:30:30.510Z] I0626 07:00:30.508778   14948 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0626 07:00:30.508778   14948 load.go:115] Finished reloading\n"}}
+[debug] [2025-06-26T01:30:30.520Z] I0626 07:00:30.519946   14948 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0626 07:00:30.519946   14948 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
