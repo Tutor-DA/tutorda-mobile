@@ -1,31 +1,21 @@
 {
-"compilerOptions": {
-    "strict": true,
-    "baseUrl": ".",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react-native",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "target": "ESNext",
-    "noEmit": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "paths": {
-      "@/*": ["./*"],
-      "@components/*": ["components/*"],
-      "@constants/*": ["constants/*"]
-    }
-  },
-  "include": [
-      "**/*.js",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-, "metro.config.cjs"  ],
-  "exclude": ["node_modules"],
-  "extends": "./tsconfig.base.json"
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./*"],
+            "@components/*": ["components/*"],
+            "@constants/*": ["constants/*"]
+        }
+    },
+    "include": [
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        ".expo/types/**/*.ts",
+        "expo-env.d.ts",
+        "metro.config.cjs"
+    ],
+    "exclude": ["node_modules"],
+    "extends": "./tsconfig.base.json"
 }

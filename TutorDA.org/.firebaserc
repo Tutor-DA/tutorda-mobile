@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "tutorda-mobile-app",
+    "MathAI": "tutorda-mobile-app"
+  },
+  "targets": {},
+  "etags": {}
+}

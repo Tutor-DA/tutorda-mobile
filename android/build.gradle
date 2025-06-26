@@ -1,55 +1,49 @@
-// Top-level build.gradle template for Expo SDK 53 + React Native 0.74 + Kotlin 1.9.22 + AGP 8.2.2 + Gradle 8.5
-
 buildscript {
     ext {
-        buildToolsVersion = findProperty('android.buildToolsVersion') ?: '34.0.0'
-        minSdkVersion = Integer.parseInt(findProperty('android.minSdkVersion') ?: '24')
-        compileSdkVersion = Integer.parseInt(findProperty('android.compileSdkVersion') ?: '34')
-        targetSdkVersion = Integer.parseInt(findProperty('android.targetSdkVersion') ?: '34')
-        kotlinVersion = findProperty('android.kotlinVersion') ?: '1.9.22'
-        ndkVersion = "26.1.10909125"
+        kotlinVersion = '1.8.22'               // ✅ matches Gradle 8.5
+        androidGradlePluginVersion = '8.1.2'   // ✅ safe for Expo SDK 53
+        compileSdkVersion = 35                 // Target Android API level
+        minSdkVersion = 24                     // Minimum supported API
+        targetSdkVersion = 35                  // Targeted API
+        buildToolsVersion = '34.0.0'           // Build tools version (optional)
+        androidxCoreVersion = '1.12.0'         // Example for androidx dependency reuse
+        appCompatVersion = '1.6.1'             // AppCompat library
+        materialVersion = '1.11.0'             // Material Components
     }
     repositories {
         google()
         mavenCentral()
+        maven { url("https://plugins.gradle.org/m2/") } // ✅ needed
+        maven { url("https://registry.expo.dev/maven") } // ✅ Expo plugins
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.2.2")
-        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("com.android.tools.build:gradle:$androidGradlePluginVersion")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-    }
-}
-
-apply plugin: "com.android.application"
-apply plugin: "org.jetbrains.kotlin.android"
-apply plugin: "com.facebook.react"
-
-android {
-    compileSdkVersion compileSdkVersion
-    buildToolsVersion buildToolsVersion
-
-    defaultConfig {
-        applicationId "com.anonymous.tutordamathapp"
-        minSdkVersion minSdkVersion
-        targetSdkVersion targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        classpath("expo:expo-gradle-plugin")
+        classpath("com.facebook.react:react-native-gradle-plugin")
     }
 
-    buildTypes {
-        debug {
-            signingConfig signingConfigs.debug
-        }
-        release {
-            signingConfig signingConfigs.debug // replace with release signing in production
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+    def reactNativeAndroidDir = new File(
+        providers.exec {
+            workingDir(rootDir)
+            commandLine("node", "--print", "require.resolve('react-native/package.json')")
+        }.standardOutput.asText.get().trim(),
+        "../android"
+    )
+
+    allprojects {
+        repositories {
+            maven {
+                // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+                url(reactNativeAndroidDir)
+            }
+
+            google()
+            mavenCentral()
         }
     }
-}
 
-dependencies {
-    implementation("com.facebook.react:react-android")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
-    implementation("org.webkit:android-jsc:+")
+    apply plugin: "expo-root-project"
+    apply plugin: "com.facebook.react.rootproject"
+
 }

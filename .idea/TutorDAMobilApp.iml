@@ -9,6 +9,9 @@
       <excludeFolder url="file://$MODULE_DIR$/android/build" />
       <excludeFolder url="file://$MODULE_DIR$/functions/node_modules" />
       <excludeFolder url="file://$MODULE_DIR$/tutordadefault/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/android/app/src/main/res/mipmap-anydpi-v26" />
+      <excludeFolder url="file://$MODULE_DIR$/android/app/src/main/res/values-night" />
+      <excludeFolder url="file://$MODULE_DIR$/node_modules" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
