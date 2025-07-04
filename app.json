@@ -2,14 +2,11 @@
   "expo": {
     "name": "TutorDA.org",
     "slug": "tutorda-math-app",
-      "scheme": "tutorda-math-app",
+    "scheme": "tutorda-math-app",
     "jsEngine": "hermes",
     "version": "1.0.0",
     "orientation": "portrait",
-    "platforms": [
-      "android",
-      "ios"
-    ],
+    "platforms": ["android", "ios"],
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -24,39 +21,20 @@
     "web": {
       "bundler": "webpack",
       "output": "single",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "plugins": [
-      "expo-router",
-        [
-            "expo-font",
-            {
-                "fonts": [
-                    {
-                        "name": "Poppins-Regular",
-                        "file": "./assets/fonts/Poppins-Regular.ttf"
-                    },
-                    {
-                        "name": "Poppins-Bold",
-                        "file": "./assets/fonts/Poppins-Bold.ttf"
-                    },
-                    {
-                        "name": "Inter-Regular",
-                        "file": "./assets/fonts/Inter-Regular.ttf"
-                    }
-                ]
-            }
-        ],
-      "expo-dev-client",
-      [
-        "expo-build-properties",
-        {
-          "android": {
-            "launchMode": "mostRecent"
-          }
-        }
-      ]
-    ],
+  "expo-router",
+  "expo-dev-client",
+  [
+    "expo-build-properties",
+    {
+      "android": {
+        "launchMode": "mostRecent"
+      }
+    }
+  ]
+],
     "experiments": {
       "typedRoutes": true
     },

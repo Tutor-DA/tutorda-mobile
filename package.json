@@ -21,10 +21,13 @@
   "jest": {
     "preset": "jest-expo"
   },
+  "resolutions": {
+    "@expo/config-plugins": "10.1.1"
+  },
   "dependencies": {
     "@expo-google-fonts/inter": "0.2.3",
     "@expo-google-fonts/poppins": "0.2.3",
-    "@expo/config-plugins": "~10.0.0",
+    "@expo/config-plugins": "10.1.1",
     "@expo/dom-webview": "^0.1.5",
     "@expo/vector-icons": "^14.1.0",
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
@@ -42,13 +45,13 @@
     "@react-navigation/native-stack": "^7.2.0",
     "ajv": "^6.12.6",
     "ajv-keywords": "^3.5.2",
-    "expo": "^53.0.12",
+    "expo": "53.0.17",
     "expo-auth-session": "~6.2.0",
     "expo-build-properties": "~0.14.6",
     "expo-constants": "~17.1.6",
     "expo-dev-client": "~5.2.1",
     "expo-document-picker": "~13.1.5",
-    "expo-font": "~13.3.1",
+    "expo-font": "~13.3.2",
     "expo-image-picker": "~16.1.4",
     "expo-linear-gradient": "~14.1.5",
     "expo-linking": "~7.1.5",
@@ -101,7 +104,6 @@
   "expoRouter": {
     "appRoot": "app"
   },
-  "type": "module",
   "expo": {
     "doctor": {
       "reactNativeDirectoryCheck": {

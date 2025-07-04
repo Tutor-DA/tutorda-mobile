@@ -11,22 +11,24 @@ export default function AppLayout() {
   const [checkingAuth, setCheckingAuth] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        // No user logged in → redirect to auth flow
-        router.replace('/login');
-      } else {
-        setCheckingAuth(false);
-      }
-    });
+    console.log('👀 RootLayout mounted');
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      router.replace('/(auth)/login');
+    } else {
+      // delay to avoid conflict with routing
+      setTimeout(() => setCheckingAuth(false), 100); 
+    }
+  });
 
-    return unsubscribe;
-  }, []);
+  return unsubscribe;
+}, []);
+
 
   if (checkingAuth) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color={theme.colors.primary} />
+        <ActivityIndicator size="small" color="#999" />
       </View>
     );
   }

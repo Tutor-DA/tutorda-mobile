@@ -20,6 +20,7 @@ export default function LoginScreen() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
+    console.log('🟢 Login screen rendered');
     Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 600,
@@ -54,9 +55,9 @@ export default function LoginScreen() {
       }
 
       if (userData.role === 'student') {
-        router.push('./app/student-entry');  // Route to students folder
+        router.push('/student-entry');  // Route to students folder
       } else if (userData.role === 'teacher') {
-        router.push('./app/teacher-entry');   // Route to teacher folder
+        router.push('/teacher-entry');   // Route to teacher folder
       } else {
         setError(`Unknown role: ${userData.role}`);
       }
@@ -118,7 +119,7 @@ export default function LoginScreen() {
       />
       <PrimaryButton
         title="Go to Register"
-        onPress={() => router.push('./auth/register')}
+        onPress={() => router.push('/(auth)/register')}
         variant="text"
       />
     </Animated.View>
