@@ -3718,3 +3718,15 @@ For CI servers and headless environments, generate a new token with firebase log
 [error] [Firebase Plugin] requireAuth error: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
 
 For CI servers and headless environments, generate a new token with firebase login:ci
+[info] [Firebase Plugin] Stopping Data Connect toolkit
+[warn] !  Data Connect Emulator has exited upon receiving signal: SIGKILL 
+[debug] [2025-07-06T20:48:42.533Z] [Firebase Plugin] Activating Firebase extension.
+[debug] [2025-07-06T20:48:45.128Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-07-06T20:48:45.130Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-06T20:48:45.130Z] > authorizing via signed-in user (support@tutorda.org)
+[debug] [2025-07-06T20:48:45.132Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-07-06T20:48:45.132Z] Checked if tokens are valid: false, expires at: 1750277831002
+[debug] [2025-07-06T20:48:45.133Z] > refreshing access token with scopes: []
+[debug] [2025-07-06T20:48:45.133Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-07-06T20:48:45.134Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-06T20:48:45.141Z] [Firebase Plugin] VSCode notification server listening on port 40001

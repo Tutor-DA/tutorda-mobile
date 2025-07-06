@@ -24,7 +24,7 @@ export default function DashboardScreen() {
       <View style={styles.buttonContainer}>
         <Button
           title="View All Courses"
-          onPress={() => router.push('/courses')}
+          onPress={() => router.push('/(tabs)/courses')}
         />
       </View>
       <View style={styles.buttonContainer}>

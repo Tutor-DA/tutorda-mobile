@@ -36,7 +36,7 @@ export default function SettingsScreen() {
       const auth = getAuth();
       await signOut(auth);
       Alert.alert('Logged out', 'You have been successfully logged out.');
-      router.replace('./app/(auth)/login');
+      router.replace('/app/(auth)/login');
     } catch (err) {
       console.error('Logout error:', err);
       Alert.alert('Error', 'Something went wrong during logout.');

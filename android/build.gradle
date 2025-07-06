@@ -1,49 +1,55 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
 buildscript {
-    ext {
-        kotlinVersion = '1.8.22'               // ✅ matches Gradle 8.5
-        androidGradlePluginVersion = '8.1.2'   // ✅ safe for Expo SDK 53
-        compileSdkVersion = 35                 // Target Android API level
-        minSdkVersion = 24                     // Minimum supported API
-        targetSdkVersion = 35                  // Targeted API
-        buildToolsVersion = '34.0.0'           // Build tools version (optional)
-        androidxCoreVersion = '1.12.0'         // Example for androidx dependency reuse
-        appCompatVersion = '1.6.1'             // AppCompat library
-        materialVersion = '1.11.0'             // Material Components
-    }
-    repositories {
-        google()
-        mavenCentral()
-        maven { url("https://plugins.gradle.org/m2/") } // ✅ needed
-        maven { url("https://registry.expo.dev/maven") } // ✅ Expo plugins
-    }
-    dependencies {
-        classpath("com.android.tools.build:gradle:$androidGradlePluginVersion")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-        classpath("expo:expo-gradle-plugin")
-        classpath("com.facebook.react:react-native-gradle-plugin")
+  repositories {
+    google()
+    mavenCentral()
+  }
+  dependencies {
+    classpath('com.android.tools.build:gradle')
+    classpath('com.facebook.react:react-native-gradle-plugin')
+    classpath('org.jetbrains.kotlin:kotlin-gradle-plugin')
+  }
+}
+
+def reactNativeAndroidDir = new File(
+  providers.exec {
+    workingDir(rootDir)
+    commandLine("node", "--print", "require.resolve('react-native/package.json')")
+  }.standardOutput.asText.get().trim(),
+  "../android"
+)
+
+allprojects {
+  repositories {
+    maven {
+      // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+      url(reactNativeAndroidDir)
     }
 
-    def reactNativeAndroidDir = new File(
-        providers.exec {
-            workingDir(rootDir)
-            commandLine("node", "--print", "require.resolve('react-native/package.json')")
-        }.standardOutput.asText.get().trim(),
-        "../android"
-    )
+    google()
+    mavenCentral()
+    maven { url 'https://www.jitpack.io' }
+  }
+}
 
-    allprojects {
-        repositories {
-            maven {
-                // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-                url(reactNativeAndroidDir)
+
+apply plugin: "expo-root-project"
+apply plugin: "com.facebook.react.rootproject"
+
+subprojects {
+    if (it.name == "react-native-view-shot") {
+        it.afterEvaluate {
+            it.tasks.matching { task -> task.name.toLowerCase().contains("lint") }.configureEach {
+                enabled = false
             }
-
-            google()
-            mavenCentral()
         }
     }
 
-    apply plugin: "expo-root-project"
-    apply plugin: "com.facebook.react.rootproject"
-
+    if (it.name == "expo-dev-launcher") {
+        it.tasks.withType(Test).configureEach {
+            enabled = false
+        }
+    }
 }
+

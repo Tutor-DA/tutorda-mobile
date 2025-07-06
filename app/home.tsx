@@ -13,7 +13,7 @@ export default function HomeScreen() {
     setLoading(true);
     try {
       await signOut(auth);
-      router.replace('./login');
+      router.replace('/(auth)/login');
     } catch (err) {
       console.error('Sign-out error', err);
       Alert.alert('Error', 'Failed to sign out. Please try again.');
@@ -31,19 +31,19 @@ export default function HomeScreen() {
         <View style={styles.buttonGroup}>
           <PrimaryButton
             title="Go to Dashboard"
-            onPress={() => router.push('/dashboard')}
+            onPress={() => router.push('/(tabs)/dashboard')}
             accessibilityLabel="Navigate to dashboard"
           />
           <View style={styles.spacer} />
           <PrimaryButton
             title="View Profile"
-            onPress={() => router.push('/profile')}
+            onPress={() => router.push('/(tabs)/profile')}
             accessibilityLabel="Navigate to profile"
           />
           <View style={styles.spacer} />
           <PrimaryButton
             title="Browse Courses"
-            onPress={() => router.push('/courses')}
+            onPress={() => router.push('/(tabs)/courses')}
             accessibilityLabel="Navigate to courses"
           />
           <View style={styles.spacer} />

@@ -5,7 +5,7 @@ import { onAuthStateChanged, getAuth } from 'firebase/auth';
 import { app } from '@/firebaseConfig';
 import { theme } from '@/constants/theme';
 
-export default function AppLayout() {
+export default function AuthLayout() {
   const router = useRouter();
   const auth = getAuth(app);
   const [checkingAuth, setCheckingAuth] = useState(true);
@@ -17,7 +17,7 @@ export default function AppLayout() {
       router.replace('/(auth)/login');
     } else {
       // delay to avoid conflict with routing
-      setTimeout(() => setCheckingAuth(false), 100); 
+      setTimeout(() => setCheckingAuth(false), 100);
     }
   });
 
