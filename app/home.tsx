@@ -37,7 +37,7 @@ export default function HomeScreen() {
           <View style={styles.spacer} />
           <PrimaryButton
             title="View Profile"
-            onPress={() => router.push('/(tabs)/profile')}
+            onPress={() => router.push('/(tabs)/learn')}
             accessibilityLabel="Navigate to profile"
           />
           <View style={styles.spacer} />

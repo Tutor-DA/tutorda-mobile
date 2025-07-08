@@ -119,7 +119,7 @@ export default function LoginScreen() {
       />
       <PrimaryButton
         title="Go to Register"
-        onPress={() => router.push('/(auth)/register')}
+        onPress={() => router.push('/auth/register')}
         variant="text"
       />
     </Animated.View>
