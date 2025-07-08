@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Slot, useRouter } from 'expo-router';
+import { Slot, useRouter, usePathname } from 'expo-router';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { onAuthStateChanged, getAuth } from 'firebase/auth';
 import { app } from '@/firebaseConfig';
@@ -7,23 +7,22 @@ import { theme } from '@/constants/theme';
 
 export default function AuthLayout() {
   const router = useRouter();
+  const pathname = usePathname(); // ✅ Track current path
   const auth = getAuth(app);
   const [checkingAuth, setCheckingAuth] = useState(true);
 
   useEffect(() => {
-    console.log('👀 RootLayout mounted');
-  const unsubscribe = onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      router.replace('/(auth)/login');
-    } else {
-      // delay to avoid conflict with routing
-      setTimeout(() => setCheckingAuth(false), 100);
-    }
-  });
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      // ✅ Avoid redirect loop if already on login
+      if (!user && pathname !== '/(auth)/login') {
+        router.replace('/(auth)/login');
+      } else {
+        setTimeout(() => setCheckingAuth(false), 100);
+      }
+    });
 
-  return unsubscribe;
-}, []);
-
+    return unsubscribe;
+  }, [pathname]);
 
   if (checkingAuth) {
     return (
@@ -41,6 +40,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: theme.colors.background,
+    backgroundColor: theme.colors.background || '#fff',
   },
 });

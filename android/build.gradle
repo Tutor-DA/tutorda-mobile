@@ -33,23 +33,5 @@ allprojects {
   }
 }
 
-
 apply plugin: "expo-root-project"
 apply plugin: "com.facebook.react.rootproject"
-
-subprojects {
-    if (it.name == "react-native-view-shot") {
-        it.afterEvaluate {
-            it.tasks.matching { task -> task.name.toLowerCase().contains("lint") }.configureEach {
-                enabled = false
-            }
-        }
-    }
-
-    if (it.name == "expo-dev-launcher") {
-        it.tasks.withType(Test).configureEach {
-            enabled = false
-        }
-    }
-}
-

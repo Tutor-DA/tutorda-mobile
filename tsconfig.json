@@ -1,21 +1,22 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["./*"],
-            "@components/*": ["components/*"],
-            "@constants/*": ["constants/*"]
-        }
-    },
-    "include": [
-        "**/*.js",
-        "**/*.jsx",
-        "**/*.ts",
-        "**/*.tsx",
-        ".expo/types/**/*.ts",
-        "expo-env.d.ts",
-        "metro.config.cjs"
-    ],
-    "exclude": ["node_modules"],
-    "extends": "./tsconfig.base.json"
+  "compilerOptions": {
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@components/*": ["components/*"],
+      "@constants/*": ["constants/*"],
+      "@firebase/auth": ["./node_modules/@firebase/auth/dist/index.rn.d.ts"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "metro.config.cjs"
+  ],
+  "exclude": ["node_modules"],
+  "extends": "./tsconfig.base.json"
 }

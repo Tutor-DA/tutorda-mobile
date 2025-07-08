@@ -6,7 +6,10 @@
     "jsEngine": "hermes",
     "version": "1.0.0",
     "orientation": "portrait",
-    "platforms": ["android", "ios"],
+    "platforms": [
+      "android",
+      "ios"
+    ],
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -24,17 +27,20 @@
       "favicon": "./assets/icon.png"
     },
     "plugins": [
-  "expo-router",
-  "expo-dev-client",
-  [
-    "expo-build-properties",
-    {
-      "android": {
-        "launchMode": "mostRecent"
-      }
-    }
-  ]
-],
+      "expo-router",
+      "expo-dev-client",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "launchMode": "mostRecent"
+          }
+        }
+      ],
+      "expo-asset",
+      "expo-font",
+      "expo-web-browser"
+    ],
     "experiments": {
       "typedRoutes": true
     },

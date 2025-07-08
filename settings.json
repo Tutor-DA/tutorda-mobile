@@ -1,6 +1,6 @@
 {
-  "java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.15",
-"java.import.gradle.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.15",
-"kotlin.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.15",
-"java.jdt.ls.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.15"
+  "java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.15.6-hotspot",
+  "java.import.gradle.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.15.6-hotspot",
+  "kotlin.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.15.6-hotspot",
+  "java.jdt.ls.java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.15.6-hotspot"
 }
