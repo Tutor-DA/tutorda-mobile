@@ -1,66 +1,113 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, Button, ScrollView } from 'react-native';
 import { router } from 'expo-router';
+import { useTheme } from '@/constants/useTheme';
 
 export default function DashboardScreen() {
+  const theme = useTheme();
+
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Dashboard</Text>
+    <ScrollView
+      contentContainerStyle={{
+        padding: theme.spacing.lg,
+        backgroundColor: theme.colors.background,
+        flexGrow: 1,
+        alignItems: 'center',
+      }}
+    >
+      <Text
+        style={{
+          fontSize: theme.typography.fontSize['2xl'],
+          fontFamily: theme.fonts.headingBold,
+          color: theme.colors.text.primary,
+          marginBottom: theme.spacing.xl,
+        }}
+      >
+        🎯 Dashboard
+      </Text>
 
-      <View style={styles.card}>
-        <Text style={styles.cardTitle}>Your Progress</Text>
-        <Text>Completed: 8 / 10 courses</Text>
-        <Text>Quizzes passed: 15</Text>
-        <Text>Achievements: 5 badges</Text>
+      {/* Progress Card */}
+      <View
+        style={{
+          width: '100%',
+          backgroundColor: theme.colors.surface,
+          padding: theme.spacing.lg,
+          borderRadius: theme.borderRadius.lg,
+          marginBottom: theme.spacing.lg,
+          ...theme.shadows.md,
+        }}
+      >
+        <Text
+          style={{
+            fontFamily: theme.fonts.headingSemiBold,
+            fontSize: theme.typography.fontSize.lg,
+            color: theme.colors.text.primary,
+            marginBottom: theme.spacing.sm,
+          }}
+        >
+          Your Progress
+        </Text>
+        <Text style={{ color: theme.colors.text.secondary }}>
+          • Completed: 8 / 10 courses
+        </Text>
+        <Text style={{ color: theme.colors.text.secondary }}>
+          • Quizzes passed: 15
+        </Text>
+        <Text style={{ color: theme.colors.text.secondary }}>
+          • Achievements: 5 badges
+        </Text>
       </View>
 
-      <View style={styles.card}>
-        <Text style={styles.cardTitle}>Recent Activity</Text>
-        <Text>- Completed "Integration Basics" quiz</Text>
-        <Text>- Viewed "Differentiation Lecture 3"</Text>
-        <Text>- Earned "Math Master" badge</Text>
+      {/* Activity Card */}
+      <View
+        style={{
+          width: '100%',
+          backgroundColor: theme.colors.surface,
+          padding: theme.spacing.lg,
+          borderRadius: theme.borderRadius.lg,
+          marginBottom: theme.spacing.xl,
+          ...theme.shadows.md,
+        }}
+      >
+        <Text
+          style={{
+            fontFamily: theme.fonts.headingSemiBold,
+            fontSize: theme.typography.fontSize.lg,
+            color: theme.colors.text.primary,
+            marginBottom: theme.spacing.sm,
+          }}
+        >
+          Recent Activity
+        </Text>
+        <Text style={{ color: theme.colors.text.secondary }}>
+          • Completed “Integration Basics” quiz
+        </Text>
+        <Text style={{ color: theme.colors.text.secondary }}>
+          • Viewed “Differentiation Lecture 3”
+        </Text>
+        <Text style={{ color: theme.colors.text.secondary }}>
+          • Earned “Math Master” badge
+        </Text>
       </View>
 
-      <View style={styles.buttonContainer}>
+      {/* Navigation Buttons */}
+      <View style={{ width: '60%', gap: theme.spacing.md }}>
         <Button
-          title="View All Courses"
-          onPress={() => router.push('/(tabs)/courses')}
+          title="📚 View All Courses"
+          color={theme.colors.primary}
+          onPress={() => router.push('/courses')}
         />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button title="Go to Profile" onPress={() => router.push('/profile')} />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button title="Back to Home" onPress={() => router.replace('/home')} />
+        <Button
+          title="👤 Go to Profile"
+          color={theme.colors.secondary}
+          onPress={() => router.push('/profile')}
+        />
+        <Button
+          title="🏠 Back to Home"
+          color={theme.colors.accent}
+          onPress={() => router.replace('/home')}
+        />
       </View>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
-  card: {
-    width: '90%',
-    backgroundColor: '#f0f0f0',
-    padding: 16,
-    borderRadius: 8,
-    marginVertical: 8,
-  },
-  cardTitle: {
-    fontSize: 20,
-    fontWeight: '600',
-    marginBottom: 8,
-  },
-  buttonContainer: {
-    marginVertical: 8,
-    width: '80%',
-  },
-});

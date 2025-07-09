@@ -12,28 +12,32 @@ interface CourseCardProps {
 export function CourseCard({ course, onPress }: CourseCardProps) {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
+      {/* Header */}
       <View style={[styles.header, { backgroundColor: course.color }]}>
-        <BookOpen size={24} color={theme.colors.text.inverse} />
+        <BookOpen size={18} color={theme.colors.text.inverse} />
         <View style={styles.progressBadge}>
           <Text style={styles.progressText}>{course.progress || 0}%</Text>
         </View>
       </View>
 
+      {/* Content */}
       <View style={styles.content}>
-        <Text style={styles.title} numberOfLines={2}>
-          {course.title}
-        </Text>
-        <Text style={styles.description} numberOfLines={2}>
-          {course.description}
-        </Text>
+        <View>
+          <Text style={styles.title} numberOfLines={1}>
+            {course.title}
+          </Text>
+          <Text style={styles.description} numberOfLines={2}>
+            {course.description}
+          </Text>
+        </View>
 
         <View style={styles.stats}>
           <View style={styles.statItem}>
-            <Users size={14} color={theme.colors.text.secondary} />
+            <Users size={12} color={theme.colors.text.secondary} />
             <Text style={styles.statText}>{course.studentCount}</Text>
           </View>
           <View style={styles.statItem}>
-            <TrendingUp size={14} color={theme.colors.text.secondary} />
+            <TrendingUp size={12} color={theme.colors.text.secondary} />
             <Text style={styles.statText}>{course.avgXP} XP</Text>
           </View>
         </View>
@@ -44,22 +48,24 @@ export function CourseCard({ course, onPress }: CourseCardProps) {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: theme.colors.surface,
     borderRadius: theme.borderRadius.lg,
     overflow: 'hidden',
+    padding: theme.spacing.sm,
     ...theme.shadows.md,
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: theme.spacing.lg,
-    height: 80,
+    padding: theme.spacing.sm,
+    minHeight: 40,
   },
   progressBadge: {
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    paddingHorizontal: theme.spacing.sm,
-    paddingVertical: theme.spacing.xs,
+    paddingHorizontal: theme.spacing.xs,
+    paddingVertical: 2,
     borderRadius: theme.borderRadius.md,
   },
   progressText: {
@@ -68,33 +74,35 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   content: {
-    padding: theme.spacing.lg,
+    flex: 1,
+    justifyContent: 'space-between',
+    paddingHorizontal: theme.spacing.sm,
+    paddingBottom: theme.spacing.sm,
   },
   title: {
-    fontSize: theme.typography.fontSize.lg,
+    fontSize: theme.typography.fontSize.sm,
     fontWeight: 'bold',
     color: theme.colors.text.primary,
-    marginBottom: theme.spacing.sm,
+    marginBottom: theme.spacing.xs,
   },
   description: {
-    fontSize: theme.typography.fontSize.sm,
+    fontSize: theme.typography.fontSize.xs,
+    lineHeight: theme.typography.fontSize.xs * 1.4,
     color: theme.colors.text.secondary,
-    lineHeight:
-      theme.typography.lineHeight.base * theme.typography.fontSize.sm,
-    marginBottom: theme.spacing.lg,
+    marginBottom: theme.spacing.sm,
   },
   stats: {
     flexDirection: 'row',
-    gap: theme.spacing.lg,
+    justifyContent: 'space-between',
   },
   statItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: theme.spacing.xs,
   },
   statText: {
-    fontSize: theme.typography.fontSize.sm,
+    fontSize: theme.typography.fontSize.xs,
     color: theme.colors.text.secondary,
     fontWeight: '500',
+    marginLeft: theme.spacing.xs,
   },
 });

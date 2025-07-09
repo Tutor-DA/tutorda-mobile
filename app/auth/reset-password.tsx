@@ -33,7 +33,7 @@ export default function ResetPasswordScreen() {
       setLoading(true);
       await sendPasswordResetEmail(auth, email);
       Alert.alert('Success', 'A password reset email has been sent!');
-      router.replace('/(auth)/login');  // ✅ updated to /login
+      router.replace('/auth/login');  // ✅ updated to /login
     } catch (err: any) {
       console.error('Reset password error:', err);
       setError(err.message || 'Failed to send reset email');
@@ -67,7 +67,7 @@ export default function ResetPasswordScreen() {
 
       <PrimaryButton
         title="Back to Login"
-        onPress={() => router.replace('/(auth)/login')}
+        onPress={() => router.replace('/auth/login')}
         variant="text"
       />
     </Animated.View>

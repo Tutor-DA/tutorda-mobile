@@ -4,7 +4,7 @@ import {
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
 } from 'firebase/auth';
-import { getDoc, doc } from 'firebase/firestore';
+import { getDoc, setDoc, doc } from 'firebase/firestore';
 import { auth, db } from '@/firebaseConfig';
 import { router } from 'expo-router';
 import InputField from '@/components/InputField';
@@ -49,18 +49,26 @@ export default function LoginScreen() {
       const userDoc = await getDoc(doc(db, 'users', uid));
       const userData = userDoc.data();
 
-      if (!userData || !userData.role) {
-        setError('User role not defined');
-        return;
-      }
+let role = userData?.role;
 
-      if (userData.role === 'student') {
-        router.push('/student-entry');  // Route to students folder
-      } else if (userData.role === 'teacher') {
-        router.push('/teacher-entry');   // Route to teacher folder
-      } else {
-        setError(`Unknown role: ${userData.role}`);
-      }
+if (!role) {
+  console.warn('⚠️ User role not found. Defaulting to "student"');
+  role = 'student';
+
+  await setDoc(doc(db, 'users', uid), {
+    ...userData,
+    role: 'student',
+  }, { merge: true });
+}
+
+if (role === 'student') {
+  router.push('/student-entry');
+} else if (role === 'teacher') {
+  router.push('/teacher-entry');
+} else {
+  setError(`Unknown role: ${role}`);
+}
+
     } catch (err: any) {
       console.error('Login error:', err);
       setError(err.message || 'An unexpected error occurred');

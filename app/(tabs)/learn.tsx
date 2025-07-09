@@ -241,40 +241,41 @@ export default function LearnScreen() {
       </View>
 
       {/* Categories */}
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={styles.categoriesContainer}
-        contentContainerStyle={styles.categoriesContent}
+      <View style={{ height: 72, marginBottom: 8 }}>
+  <ScrollView
+    horizontal
+    showsHorizontalScrollIndicator={false}
+    contentContainerStyle={styles.categoriesContent}
+  >
+    {categories.map((category) => (
+      <TouchableOpacity
+        key={category}
+        style={[
+          styles.categoryChip,
+          selectedCategory === category && styles.categoryChipActive,
+        ]}
+        onPress={() => {
+          fadeAnim.setValue(0);
+          setSelectedCategory(category);
+          Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 500,
+            useNativeDriver: true,
+          }).start();
+        }}
       >
-        {categories.map((category) => (
-          <TouchableOpacity
-            key={category}
-            style={[
-              styles.categoryChip,
-              selectedCategory === category && styles.categoryChipActive,
-            ]}
-            onPress={() => {
-              fadeAnim.setValue(0);
-              setSelectedCategory(category);
-              Animated.timing(fadeAnim, {
-                toValue: 1,
-                duration: 500,
-                useNativeDriver: true,
-              }).start();
-            }}
-          >
-            <Text
-              style={[
-                styles.categoryText,
-                selectedCategory === category && styles.categoryTextActive,
-              ]}
-            >
-              {category}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
+        <Text
+          style={[
+            styles.categoryText,
+            selectedCategory === category && styles.categoryTextActive,
+          ]}
+        >
+          {category}
+        </Text>
+      </TouchableOpacity>
+    ))}
+  </ScrollView>
+</View>
 
       {/* Lessons List */}
       <Animated.ScrollView
@@ -507,66 +508,81 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   searchBar: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FFF',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    borderRadius: 12,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
-  },
+  flex: 1,
+  flexDirection: 'row',
+  alignItems: 'center',
+  backgroundColor: '#FFF',
+  paddingHorizontal: 12, // reduce horizontal padding
+  height: 44,            // set fixed height
+  borderRadius: 10,
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 1 },
+  shadowOpacity: 0.05,
+  shadowRadius: 3,
+  elevation: 1,
+},
   searchInput: {
-    flex: 1,
-    marginLeft: 12,
-    fontSize: 16,
-    fontFamily: 'Inter-Regular',
-    color: '#111827',
-  },
+  flex: 1,
+  marginLeft: 8,
+  fontSize: 15,
+  fontFamily: 'Inter-Regular',
+  color: '#111827',
+  paddingVertical: 0, // optional: removes internal height padding
+},
   filterButton: {
-    backgroundColor: '#FFF',
-    padding: 12,
-    borderRadius: 12,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
-  },
+  width: 44,
+  height: 44,
+  backgroundColor: '#FFF',
+  borderRadius: 10,
+  alignItems: 'center',
+  justifyContent: 'center',
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 1 },
+  shadowOpacity: 0.05,
+  shadowRadius: 3,
+  elevation: 1,
+},
   categoriesContainer: {
-    marginBottom: 20,
-  },
-  categoriesContent: {
-    paddingHorizontal: 20,
-  },
-  categoryChip: {
-    backgroundColor: '#FFF',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 20,
-    marginRight: 12,
-    borderWidth: 1,
-    borderColor: '#E5E7EB',
-  },
-  categoryChipActive: {
-    backgroundColor: '#6366F1',
-    borderColor: '#6366F1',
-  },
-  categoryText: {
-    fontSize: 14,
-    fontFamily: 'Inter-Medium',
-    color: '#6B7280',
-  },
-  categoryTextActive: {
-    color: '#FFF',
-  },
+  marginBottom: 0,
+  paddingVertical: 0,
+  height: undefined, // or remove if previously set
+},
+categoriesContent: {
+  paddingHorizontal: 20,
+  alignItems: 'center', // vertically center the square chips
+},
+ categoryChip: {
+  width: 90,
+  height: 60,
+  borderRadius: 12, // make it square-ish with rounded corners
+  backgroundColor: '#FFF',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginRight: 12,
+  borderWidth: 1,
+  borderColor: '#E5E7EB',
+},
+
+categoryChipActive: {
+  backgroundColor: '#6366F1',
+  borderColor: '#6366F1',
+},
+
+categoryText: {
+  fontSize: 12,
+  fontFamily: 'Inter-Medium',
+  color: '#6B7280',
+  textAlign: 'center',
+},
+
+categoryTextActive: {
+  color: '#FFF',
+},
   lessonsContainer: {
     flex: 1,
     paddingHorizontal: 20,
+    paddingTop: 0,
+    marginTop: 0,
   },
   lessonCard: {
     flexDirection: 'row',

@@ -116,7 +116,7 @@ export default function RegisterScreen() {
       />
       <PrimaryButton
         title="Back to Login"
-        onPress={() => router.replace('/(auth)/login')}  // ✅ updated route
+        onPress={() => router.replace('/auth/login')}  // ✅ updated route
         variant="text"
       />
     </Animated.View>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
-  StyleSheet,
   ScrollView,
   TouchableOpacity,
   Image,
@@ -13,27 +12,21 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import {
   Target,
-  Clock,
-  Trophy,
   Zap,
   Brain,
   Users,
-  Award,
-  Star,
-  ChevronRight,
 } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { theme } from '@/constants/theme';
+import { useTheme } from '@/constants/useTheme';
 
 const { width } = Dimensions.get('window');
 
-// Types
 type PracticeType = {
   id: number;
   title: string;
   description: string;
   icon: React.ElementType;
-  color: [string, string]; // Gradient colors as tuple
+  color: [string, string];
   duration: string;
   questions: number;
   difficulty: string;
@@ -41,6 +34,7 @@ type PracticeType = {
 };
 
 export default function PracticeScreen() {
+  const theme = useTheme();
   const [selectedDifficulty, setSelectedDifficulty] = useState('All');
   const [fadeAnim] = useState(new Animated.Value(0));
   const [slideAnim] = useState(new Animated.Value(50));
@@ -106,68 +100,7 @@ export default function PracticeScreen() {
     },
   ];
 
-  const recentScores = [
-    { subject: 'Algebra', score: 85, maxScore: 100, date: '2 hours ago' },
-    { subject: 'Geometry', score: 92, maxScore: 100, date: 'Yesterday' },
-    { subject: 'Calculus', score: 78, maxScore: 100, date: '2 days ago' },
-  ];
-
-  const topicQuizzes = [
-    {
-      id: 1,
-      title: 'Linear Equations',
-      subject: 'Algebra',
-      difficulty: 'Beginner',
-      questions: 15,
-      duration: '12 min',
-      rating: 4.8,
-      attempts: 1250,
-      bestScore: 88,
-      thumbnail:
-        'https://images.pexels.com/photos/6238050/pexels-photo-6238050.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&dpr=2',
-    },
-    {
-      id: 2,
-      title: 'Quadratic Functions',
-      subject: 'Algebra',
-      difficulty: 'Intermediate',
-      questions: 20,
-      duration: '18 min',
-      rating: 4.6,
-      attempts: 890,
-      bestScore: 0,
-      thumbnail:
-        'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&dpr=2',
-    },
-    {
-      id: 3,
-      title: 'Circle Geometry',
-      subject: 'Geometry',
-      difficulty: 'Intermediate',
-      questions: 18,
-      duration: '15 min',
-      rating: 4.9,
-      attempts: 1100,
-      bestScore: 95,
-      thumbnail:
-        'https://images.pexels.com/photos/5428833/pexels-photo-5428833.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&dpr=2',
-    },
-    {
-      id: 4,
-      title: 'Derivatives',
-      subject: 'Calculus',
-      difficulty: 'Advanced',
-      questions: 25,
-      duration: '30 min',
-      rating: 4.7,
-      attempts: 650,
-      bestScore: 0,
-      thumbnail:
-        'https://images.pexels.com/photos/8636603/pexels-photo-8636603.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&dpr=2',
-    },
-  ];
-
-  const filteredQuizzes = topicQuizzes.filter(
+  const filteredQuizzes = practiceTypes.filter(
     (quiz) =>
       selectedDifficulty === 'All' || quiz.difficulty === selectedDifficulty
   );
@@ -175,7 +108,7 @@ export default function PracticeScreen() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'Beginner':
-        return theme.colors.secondary;
+        return theme.colors.success;
       case 'Intermediate':
         return theme.colors.accent;
       case 'Advanced':
@@ -186,19 +119,73 @@ export default function PracticeScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {/* (Your existing UI code as-is, unchanged) */}
-        {/* The important change is in practiceTypes color type */}
+    <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
+      <ScrollView contentContainerStyle={{ padding: theme.spacing.md }}>
+        <Animated.View
+          style={{
+            opacity: fadeAnim,
+            transform: [{ translateY: slideAnim }],
+          }}
+        >
+          <Text
+            style={{
+              fontSize: theme.typography.fontSize['2xl'],
+              fontFamily: theme.typography.fontFamily.headingBold,
+              color: theme.colors.text.primary,
+              marginBottom: theme.spacing.lg,
+              textAlign: 'center',
+            }}
+          >
+            Practice Modes
+          </Text>
+
+          {filteredQuizzes.map((quiz) => {
+            const Icon = quiz.icon;
+            return (
+              <TouchableOpacity
+                key={quiz.id}
+                onPress={() => router.push(`/quiz/${quiz.id}`)}
+                style={{ marginBottom: theme.spacing.lg }}
+              >
+                <LinearGradient
+                  colors={quiz.color}
+                  style={{
+                    borderRadius: theme.borderRadius.lg,
+                    padding: theme.spacing.lg,
+                  }}
+                >
+                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Icon
+                      color={theme.colors.white}
+                      size={32}
+                      style={{ marginRight: theme.spacing.md }}
+                    />
+                    <View>
+                      <Text
+                        style={{
+                          fontFamily: theme.fonts.headingBold,
+                          fontSize: theme.typography.fontSize.lg,
+                          color: theme.colors.white,
+                        }}
+                      >
+                        {quiz.title}
+                      </Text>
+                      <Text
+                        style={{
+                          fontFamily: theme.fonts.regular,
+                          color: theme.colors.white,
+                        }}
+                      >
+                        {quiz.description}
+                      </Text>
+                    </View>
+                  </View>
+                </LinearGradient>
+              </TouchableOpacity>
+            );
+          })}
+        </Animated.View>
       </ScrollView>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: theme.colors.background,
-  },
-  // (keep your existing styles as-is)
-});
